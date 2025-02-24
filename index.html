@@ -13,6 +13,7 @@
             background: linear-gradient(to bottom, #1a1a2e, #16213e);
             color: white;
             padding: 20px;
+            user-select: none; /* Prevent text selection */
         }
         .container {
             max-width: 800px;
@@ -31,6 +32,14 @@
             list-style-type: square;
         }
     </style>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault()); // Disable right-click
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && (event.key === 'c' || event.key === 'x' || event.key === 'u')) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="container">
